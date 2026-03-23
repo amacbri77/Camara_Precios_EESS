@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Captura de precios EESS</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="screen-start" class="screen screen--active card">
+        <span class="eyebrow">Captura rápida</span>
+        <h1>Registra el cartel de precios</h1>
+        <p class="lead">Toma una foto, adjunta ubicación si está disponible y envíala en segundos.</p>
+
+        <div class="tips">
+          <p>Toma la fotografía de frente y lo más nítida posible</p>
+          <p>Procura incluir el emblema de la EESS</p>
+          <p>Ten la localización activada para poder identificar la EESS</p>
+        </div>
+
+        <button id="take-photo-button" class="button button--primary button--large" type="button">
+          Tomar foto
+        </button>
+      </section>
+
+      <section id="screen-preview" class="screen card" aria-hidden="true">
+        <span class="eyebrow">Vista previa</span>
+        <h2>Revisa la captura</h2>
+        <div class="preview-frame">
+          <img id="preview-image" alt="Vista previa de la captura" />
+        </div>
+        <p id="status-message" class="status" aria-live="polite"></p>
+        <div class="actions actions--stacked">
+          <button id="retake-button" class="button button--secondary" type="button">Volver a tomar</button>
+          <button id="send-button" class="button button--primary" type="button">Enviar</button>
+        </div>
+      </section>
+
+      <section id="screen-success" class="screen card screen--success" aria-hidden="true">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <span class="eyebrow">Envío completado</span>
+        <h2>Gracias por tu aporte</h2>
+        <p class="lead">La imagen y sus metadatos fueron enviados correctamente.</p>
+        <button id="new-capture-button" class="button button--primary" type="button">Nueva captura</button>
+      </section>
+
+      <input
+        id="photo-input"
+        class="visually-hidden"
+        type="file"
+        accept="image/*"
+        capture="environment"
+      />
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

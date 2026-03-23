@@ -1,0 +1,211 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f6fb;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: #ffffff;
+  --text: #102033;
+  --muted: #607089;
+  --primary: #175cd3;
+  --primary-dark: #1246a3;
+  --secondary: #e8eef8;
+  --border: rgba(16, 32, 51, 0.08);
+  --shadow: 0 20px 40px rgba(20, 46, 90, 0.12);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(23, 92, 211, 0.14), transparent 35%),
+    linear-gradient(180deg, #f6f8fc 0%, #eef2f8 100%);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app-shell {
+  width: min(100%, 32rem);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: grid;
+  align-items: center;
+}
+
+.card {
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  padding: 1.4rem;
+}
+
+.screen {
+  display: none;
+  gap: 1rem;
+}
+
+.screen--active {
+  display: grid;
+}
+
+.eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+.lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.tips {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.tips p {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  background: var(--surface-strong);
+  border-radius: 1rem;
+  border: 1px solid rgba(23, 92, 211, 0.08);
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.preview-frame {
+  overflow: hidden;
+  border-radius: 1.25rem;
+  min-height: 18rem;
+  background: #dfe7f3;
+  border: 1px solid rgba(16, 32, 51, 0.08);
+}
+
+.preview-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.actions {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.button {
+  min-height: 3.4rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.button--large {
+  min-height: 3.8rem;
+  font-size: 1.05rem;
+}
+
+.button--primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background: var(--primary-dark);
+}
+
+.button--secondary {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+.status {
+  margin: 0;
+  min-height: 1.5rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.screen--success {
+  text-align: center;
+}
+
+.success-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(23, 92, 211, 0.12);
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 1.8rem;
+  }
+
+  .actions--stacked {
+    grid-template-columns: 1fr 1fr;
+  }
+}
