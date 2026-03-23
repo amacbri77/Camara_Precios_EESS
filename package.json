@@ -1,0 +1,18 @@
+{
+  "name": "camara-precios-eess",
+  "version": "1.0.0",
+  "description": "App móvil ultraminimalista para capturar y subir fotos de carteles de precios de EESS.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.0.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}
